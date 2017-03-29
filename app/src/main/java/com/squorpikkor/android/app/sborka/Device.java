@@ -16,4 +16,8 @@ public class Device {
     public void addDetail(String name, String number) {
         deviceList.add(new Detail(name, number));
     }
+
+    public Detail getDetail(int key) {
+        return deviceList.get(key);
+    }
 }
