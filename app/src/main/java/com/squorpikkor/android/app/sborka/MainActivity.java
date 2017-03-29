@@ -30,12 +30,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*for (int i = 0; i < 2; i++) {
+            String idValue = "R.string.num0" + i;
+        }*/
+
+        String idValue = "R.string.num0" + 1;
+//        int idValue = Integer.parseInt(s);
+
         addButton = (Button) findViewById(R.id.addButton);
         text1 = (TextView) findViewById(R.id.text1);
         text2 = (TextView) findViewById(R.id.text2);
 
 
-        deviceListArray[0].addDetail(String.valueOf(R.string.name01), String.valueOf(R.string.num01));
+//        deviceListArray[0].addDetail(getResources().getResourceName(R.string.name01), String.valueOf(R.string.num01));
+//        deviceListArray[0].addDetail(getString(R.string.name01), getString(R.string.num01));
+        deviceListArray[0].addDetail(getString(R.string.name01), getString(R.string.num01));
 
         text1.setText(deviceListArray[0].getDetail(0).getName());
         text2.setText(deviceListArray[0].getDetail(0).getNumber());
