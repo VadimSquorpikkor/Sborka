@@ -1,7 +1,9 @@
 <!--<?xml version="1.0" encoding="utf-8"?>-->
 <resources>
+    <string name="device01">6102</string>
     <string name="name01">Деталь01</string>
     <string name="num01">001.001.001</string>
     <string name="name02">Деталь01</string>
     <string name="num02">001.001.001</string>
+    <string name="device02">6130</string>
 </resources>

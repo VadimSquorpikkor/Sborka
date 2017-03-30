@@ -4,10 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        style="@style/DefaultButton"
-        android:id="@+id/addButton"
-        android:text="@string/add"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            style="@style/DefaultButton"
+            android:id="@+id/addButton"
+            android:text="@string/add"/>
+        <TextView
+            style="@style/DefaultTextView"
+            android:id="@+id/newDeviceInput"/>
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
