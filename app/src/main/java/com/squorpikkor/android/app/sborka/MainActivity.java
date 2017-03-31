@@ -2,6 +2,7 @@ package com.squorpikkor.android.app.sborka;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<Device> deviceList;
     ArrayList<String> listOfDevInString = new ArrayList<>();
+    ArrayAdapter<String> adapter;
 
     Button addButton;
     Device device;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     int[] numIdArray;
 
     TextView text1, text2, newDevice;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,20 +78,22 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        refreshDevListInString();
         /*for (int i = 0; i < deviceList.size(); i++) {
             listOfDevInString.add(deviceList.get(i).deviceName);
         }*/
 
         // находим список
-        ListView listView = (ListView) findViewById(R.id.list_item);
+        listView = (ListView) findViewById(R.id.list_item);
 
         // создаем адаптер
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+        adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, listOfDevInString);
 
         // присваиваем адаптер списку
         listView.setAdapter(adapter);
+
+
+        refreshDevListInString();
     }
 
     void addDevice() {
@@ -98,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
         } else {
             deviceList.add(new Device(name));
             refreshDevListInString();
+            Log.e("MY LOGG!!!", "string list size" + String.valueOf(listOfDevInString.size()));
+            Log.e("MY LOGG!!!", "device list size" + String.valueOf(deviceList.size()));
 
         }
 
@@ -116,5 +123,10 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < deviceList.size(); i++) {
             listOfDevInString.add(deviceList.get(i).deviceName);
         }
+
+        listView = (ListView) findViewById(R.id.list_item);
+        adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, listOfDevInString);
+        listView.setAdapter(adapter);
     }
 }
