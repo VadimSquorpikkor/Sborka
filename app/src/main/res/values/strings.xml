@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Sborka</string>
-    <string name="add">Add</string>
+    <string name="add">Add Device</string>
     <string name="name1">ололо</string>
     <string name="add_device_error">Input name of device!</string>
+    <string name="add_detail">Add Detail</string>
 </resources>
