@@ -104,7 +104,9 @@ public class MainActivity extends AppCompatActivity {
             deviceList.add(new Device(name));
             refreshDevListInString();
             Log.e("MY LOGG!!!", "string list size" + String.valueOf(listOfDevInString.size()));
+            Log.e("MY LOGG!!!", "string list size" + listOfDevInString.get(listOfDevInString.size() - 1));
             Log.e("MY LOGG!!!", "device list size" + String.valueOf(deviceList.size()));
+            Log.e("MY LOGG!!!", "string list size" + deviceList.get(deviceList.size() - 1));
 
         }
 
@@ -125,8 +127,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         listView = (ListView) findViewById(R.id.list_item);
+
+        // создаем адаптер
         adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, listOfDevInString);
+
+        // присваиваем адаптер списку
         listView.setAdapter(adapter);
+
+
+        adapter.notifyDataSetChanged();
     }
 }
